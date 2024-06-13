@@ -1,17 +1,42 @@
-# Node Farm
+# Jenkins Kubernetes CI/CD Pipeline
 
-This is a node express application with dynamic templating using pug engine. I build the same app before with native node code (without express framework) here in this [repo](https://github.com/amr-elzahar/nodejs-farm).
+This repository contains a Jenkins pipeline configuration for deploying a Node.js application to a Kubernetes cluster. The pipeline includes stages for cloning the repository, building a Docker image, pushing the image to DockerHub, and deploying the application to Kubernetes.
 
-## Usage
+## Prerequisites
 
-```bash
-# Intall application dependencies
-npm install
+Before you begin, ensure you have the following setup:
 
-# Start application sever
-npm start
-```
+1. **Jenkins**: A running Jenkins server.
+2. **Credentials in Jenkins**:
+   - GitHub credentials for accessing the repository.
+   - DockerHub credentials for pushing Docker images.
+   - A kubeconfig file to authenticate against the Kubernetes cluster.
+3. **Kubernetes Cluster**: A running Kubernetes cluster.
 
-## License
+## Pipeline Configuration
 
-The design of this application belongs to Jonas Schmedtmann in his complete Node JS bootcamp. You can find his repo [here](https://github.com/jonasschmedtmann/complete-node-bootcamp).
+### Environment Variables
+
+The pipeline uses the following environment variables:
+
+- `DOCKER_IMAGE`: The Docker image name to be built and pushed.
+- `KUBE_CONFIG`: Credentials for accessing the Kubernetes cluster.
+
+### Stages
+
+The pipeline consists of the following stages:
+
+1. **Clone repository**:
+
+   - Clones the repository from GitHub using the main branch.
+
+2. **Build Docker image**:
+
+   - Builds a Docker image using the specified Dockerfile.
+
+3. **Push Docker image**:
+
+   - Pushes the built Docker image to DockerHub.
+
+4. **Deploy to Kubernetes**:
+   - Deploys the application to the Kubernetes cluster using `kubectl`.
