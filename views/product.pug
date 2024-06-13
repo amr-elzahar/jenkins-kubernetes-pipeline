@@ -1,0 +1,42 @@
+doctype html
+html(lang="en")
+   head
+      meta(name="viewport" content="width=device-width, initial-scale=1.0")
+      meta(http-equiv="X-UA-Compatible", content="IE=edge")
+      link(rel="shortcut icon", type="image/png" , href="img/favicon.png")
+      link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Megrim|Nunito+Sans:400,900")
+      link(rel="stylesheet", href="css/style.css")
+      title #{data.productName} #{data.image} /// NODE FARM
+   body         
+      div.container
+         h1 🌽 Node Farm 🥦
+         figure.product
+            if data.organic 
+               div.product__organic
+                  h5 Organic
+            a.product__back(href="/")
+               span.emoji-left 👈Back
+            div.product__hero
+               span.product__emoji.product__emoji--1 #{data.image}
+               span.product__emoji.product__emoji--2 #{data.image}
+               span.product__emoji.product__emoji--3 #{data.image}
+               span.product__emoji.product__emoji--4 #{data.image}
+               span.product__emoji.product__emoji--5 #{data.image}
+               span.product__emoji.product__emoji--6 #{data.image}
+               span.product__emoji.product__emoji--7 #{data.image}
+               span.product__emoji.product__emoji--8 #{data.image}
+               span.product__emoji.product__emoji--9 #{data.image}
+            h2.product__name #{data.productName}
+            div.product__details
+               p ❤️   
+                  span.emoji-left   From #{data.from}
+               p 🌍   
+                  span.emoji-left    #{data.nutrients}
+               p 📦   
+                  span.emoji-left  #{data.quantity}
+               p 💰️   
+                  span.emoji-left #{data.price} €
+            a.product__link(href="#")
+               span.emoji-left 🛒
+               span.Add to shopping card (6.50 €)
+            p.product__description #{data.description}
