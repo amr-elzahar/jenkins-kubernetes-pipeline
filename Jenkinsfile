@@ -22,7 +22,7 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry('', 'dockerhub_creds') {
-                        docker.image(DOCKER_IMAGE).push('latest')
+                        docker.image(DOCKER_IMAGE).push("$BUILD_ID")
                     }
                 }
             }
