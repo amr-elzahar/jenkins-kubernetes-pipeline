@@ -7,7 +7,8 @@ pipeline {
     stages {
         stage('Clone repository') {
             steps {
-                git 'https://github.com/amr-elzahar/jenkins-kubernetes-pipeline.git'
+                git branch: 'main', 
+                    url: 'https://github.com/amr-elzahar/jenkins-kubernetes-pipeline.git'
             }
         }
         stage('Build Docker image') {
