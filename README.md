@@ -6,7 +6,7 @@ This repository contains a Jenkins pipeline configuration for deploying a Node.j
 
 Before you begin, ensure you have the following setup:
 
-1. **Jenkins**: A running Jenkins server.
+1. **Jenkins**: A running Jenkins server and make sure to install `Docker Pipeline` and `Kubernetes CLI` plugins.
 2. **Credentials in Jenkins**:
    - GitHub credentials for accessing the repository.
    - DockerHub credentials for pushing Docker images.
