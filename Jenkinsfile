@@ -5,12 +5,12 @@ pipeline {
         KUBE_CONFIG = credentials('kubeconfig')
     }
     stages {
-      //   stage('Clone repository') {
-      //       steps {
-      //           git branch: 'main', 
-      //               url: 'https://github.com/amr-elzahar/jenkins-kubernetes-pipeline.git'
-      //       }
-      //   }
+        stage('Clone repository') {
+            steps {
+                git branch: 'main', 
+                    url: 'https://github.com/amr-elzahar/jenkins-kubernetes-pipeline.git'
+            }
+        }
         stage('Build Docker image') {
             steps {
                 script {
